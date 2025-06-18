@@ -1,0 +1,5 @@
+# Simple config example for Prometheus to scrape metrics from Flask apps
+scrape_configs:
+  - job_name: 'flask_app'
+    static_configs:
+      - targets: ['localhost:5000']

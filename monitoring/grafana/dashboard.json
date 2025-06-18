@@ -1,0 +1,45 @@
+{
+  "dashboard": {
+    "id": null,
+    "title": "Flask API Monitoring",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Inference Latency",
+        "targets": [
+          {
+            "expr": "rate(flask_request_duration_seconds_sum[1m])",
+            "legendFormat": "latency",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 0,
+          "w": 24,
+          "h": 8
+        }
+      },
+      {
+        "type": "graph",
+        "title": "Requests per Second",
+        "targets": [
+          {
+            "expr": "rate(flask_http_request_total[1m])",
+            "legendFormat": "requests",
+            "refId": "B"
+          }
+        ],
+        "gridPos": {
+          "x": 0,
+          "y": 8,
+          "w": 24,
+          "h": 8
+        }
+      }
+    ],
+    "timezone": "browser",
+    "schemaVersion": 27,
+    "version": 1
+  }
+}
